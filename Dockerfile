@@ -40,5 +40,5 @@ RUN yarn install
 # Copy over our application code
 COPY . $APP_HOME/
 
-RUN RAILS_ENV=production bundle exec rake assets:precompile
+RUN SECRET_KEY_BASE=`bundle exec rake secret` RAILS_ENV=production bundle exec rake assets:precompile
 CMD bundle exec rails s -p ${PORT} -b '0.0.0.0'

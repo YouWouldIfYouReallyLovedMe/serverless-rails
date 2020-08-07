@@ -2,6 +2,13 @@
 
 ## Localdev Setup
 
+* Create github account
+* Set up SSH keys to push
+* In the repo, `git config user.email` and `user.name`
+* Populate git secrets with AWS credentials
+* Set up ECS Github action
+* Copy `.github/workflows/aws.yml`
+
 Populate an .env file as such;
 
 ```
