@@ -1,0 +1,30 @@
+version: '3'
+services:
+  postgres:
+    image: postgres
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+  redis:
+    image: redis:5.0
+    restart: always
+    volumes:
+      - redis_data:/data
+  rails:
+    build: .
+    image: serverless-rails
+    command: ["rails", "server", "-b", "0.0.0.0"]
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: "3000"
+    env_file:
+    - .env
+    depends_on:
+      - postgres
+      - redis
+
+volumes:
+  redis_data: {}
