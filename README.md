@@ -2,6 +2,13 @@
 
 ## Localdev Setup
 
+Populate an .env file as such;
+
+```
+POSTGRES_DB=serverless_rails_development
+DATABASE_URL=postgres://postgres@postgres
+```
+
 *To create a local postgres instance*
 ```
 brew install postgres

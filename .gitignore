@@ -35,4 +35,6 @@
 yarn-debug.log*
 .yarn-integrity
 
+postgres_data/
+
 .env
