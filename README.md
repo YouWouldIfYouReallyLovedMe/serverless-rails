@@ -7,12 +7,11 @@
 * In the repo, `git config user.email` and `user.name`
 * Populate git secrets with AWS credentials
 * Set up ECS Github action
-* Copy `.github/workflows/aws.yml`
+  * Copy `.github/workflows/aws.yml`
 
 Populate an .env file as such;
 
 ```
-POSTGRES_DB=serverless_rails_development
 DATABASE_URL=postgres://postgres@postgres
 ```
 
@@ -40,6 +39,13 @@ docker exec -it serverless-rails_postgres_1 psql -U postgres
 
 ## Testing
 
+## In Production
+
+* To manage ENV, we have to change the task definition [here](https://us-east-2.console.aws.amazon.com/ecs/home?region=us-east-2#/taskDefinitions) and then push a new branch
+
 ## TODO:
- * Set up CD
- * Serverless
+* Migrate this repo to one owned by an organization
+  * Set up CODEOWNERS on that organization
+* Invite the rest of the team to that + AWS
+* Tighten up security around which service account pushes/deploys the new ECS instances
+* Set up staging infrastructure
