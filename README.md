@@ -44,6 +44,8 @@ docker exec -it serverless-rails_postgres_1 psql -U postgres
 * To manage ENV, we have to change the task definition [here](https://us-east-2.console.aws.amazon.com/ecs/home?region=us-east-2#/taskDefinitions) and then push a new branch
 
 ## TODO:
+* Add Redis container + AWS redis
+* Set up static IP
 * Migrate this repo to one owned by an organization
   * Set up CODEOWNERS on that organization
 * Invite the rest of the team to that + AWS
